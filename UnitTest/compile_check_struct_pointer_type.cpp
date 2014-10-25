@@ -1,25 +1,4 @@
-#include <type_traits>
-
-template<typename T1, typename... Args>
-struct TrueEnding
-{
-	enum
-	{
-		pointer		= TrueEnding<T1>::pointer,
-		value		= pointer ? TrueEnding<Args...>::pointer : TrueEnding<Args...>::value,
-	};
-};
-
-template<typename T1>
-struct TrueEnding <T1>
-{
-	enum
-	{
-		pointer		= T1::value,
-		value		= true,
-	};
-};
-
+#include "../Include/compile_check_struct_pointer_type.h"
 
 #define OOBJECT_X_FIELDS \
 	X(char, valid) \
@@ -42,8 +21,3 @@ struct	tagOOBJECT {
 
 #pragma pop_macro("X")
 
-template <int QQ>
-class AAAAA
-{
-	char sz[QQ];
-};
