@@ -1,4 +1,4 @@
-objs = main.o
+objs = main.o ../UnitTest/maker/WidgetManager.o
 target = test.exe
 CC = g++ -Wall -std=c++11
 

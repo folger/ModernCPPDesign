@@ -1,7 +1,8 @@
 #include <cstdio>
 
+extern void test_WidgetManager();
 int main()
 {
-	int a;
+	test_WidgetManager();
 	return 0;
 }
