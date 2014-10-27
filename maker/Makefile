@@ -1,4 +1,4 @@
-objs = main.o ../UnitTest/maker/WidgetManager.o
+objs = main.o ../UnitTest/maker/WidgetManager.o ../UnitTest/maker/SmartPtr.o
 target = test.exe
 CC = g++ -Wall -std=c++11
 

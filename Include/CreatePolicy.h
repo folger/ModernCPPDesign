@@ -16,6 +16,11 @@ struct OpNewCreator
 		printf("OpNewCreator::Destroy()\n");
 		delete pObj;
 	}
+protected:
+	~OpNewCreator()
+	{
+		printf("OpNewCreator::~OpNewCreator()\n");
+	}
 };
 
 template <typename T>
@@ -34,6 +39,11 @@ struct MallocCreator
 		printf("MallocCreator::Destroy()\n");
 		pObj->~T();
 		free(pObj);
+	}
+protected:
+	~MallocCreator()
+	{
+		printf("MallocCreator::~MallocCreator()\n");
 	}
 };
 
@@ -55,5 +65,10 @@ struct PrototypeCreator
 	void SetPrototype(T* pObj) {pPrototype_ = pObj;}
 private:
 	T* pPrototype_;
+protected:
+	~PrototypeCreator()
+	{
+		printf("PrototypeCreator::~PrototypeCreator()\n");
+	}
 };
 

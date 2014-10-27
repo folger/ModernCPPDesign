@@ -1,4 +1,4 @@
-objs = static_assert.o compile_check_struct_pointer_type.o WidgetManager.o
+objs = static_assert.o compile_check_struct_pointer_type.o WidgetManager.o SmartPtr.o
 CC = g++ -Wall -std=c++11
 
 all : $(objs)
@@ -11,6 +11,9 @@ compile_check_struct_pointer_type.o : ../compile_check_struct_pointer_type.cpp .
 
 WidgetManager.o : ../WidgetManager.cpp ../../Include/CreatePolicy.h
 	$(CC) -c ../WidgetManager.cpp
+
+SmartPtr.o : ../SmartPtr.cpp ../../Include/SmartPtr.h
+	$(CC) -c ../SmartPtr.cpp
 
 .PHONY : clean
 clean :
